@@ -214,6 +214,7 @@ header .second_row ul button:hover {
 main {
   display: grid;
   grid-template-columns: 4fr 1fr;
+  grid-template-rows: repeat(auto-fit, 1fr);
   gap: 20px;
 
   padding: 30px 20px;
@@ -270,4 +271,34 @@ main {
 .projects .actions a:hover {
   cursor: pointer;
   color: var(--gold);
+}
+
+.announcements .articles {
+  margin-top: 20px;
+  padding: 20px 40px;
+
+  font-size: 14px;
+
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.announcements article {
+  padding: 20px 0;
+}
+
+.announcements article:not(:first-of-type):not(:last-of-type) {
+  border: solid var(--primary-grey);
+  border-width: 1px 0 1px 0;
+}
+
+.announcements article p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  margin-top: 10px;
+}
+
+.trending {
+  background-color: aqua;
 }
