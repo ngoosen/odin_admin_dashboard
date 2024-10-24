@@ -11,8 +11,10 @@ html {
   box-sizing: inherit;
 
   --primary-grey: #dce0e6;
+  --secondary-grey: #636363;
   --primary-blue: #4b9be6;
   --gold: #f3b329;
+  --shadow: #c3c5c9;
 }
 
 body {
@@ -23,6 +25,10 @@ body {
   min-height: 100vh;
 
   background-color: var(--primary-grey);
+}
+
+h2 {
+  font-size: 20px;
 }
 
 img {
@@ -90,11 +96,6 @@ img {
   width: 35px;
 }
 
-.sidebar li p:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
 header {
   display: flex;
   flex-direction: column;
@@ -103,7 +104,7 @@ header {
   padding: 20px 50px;
 
   background-color: #ffffff;
-  box-shadow: 0 0 10px 0 #949494;
+  box-shadow: 0 0 10px 0 var(--shadow);
 
   font-weight: bold;
 }
@@ -213,7 +214,7 @@ header .second_row ul button:hover {
 
 main {
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 3fr 1fr;
   grid-template-rows: repeat(auto-fit, 1fr);
   gap: 20px;
 
@@ -247,10 +248,15 @@ main {
   border-radius: 10px;
 
   background-color: #ffffff;
+
+  font-size: 14px;
 }
 
 .projects article p {
   margin-right: 50px;
+
+  font-size: 13px;
+  color: var(--secondary-grey);
 }
 
 .projects .actions {
@@ -261,7 +267,7 @@ main {
   margin-left: auto;
   margin-top: auto;
 
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .projects .actions a {
@@ -273,14 +279,17 @@ main {
   color: var(--gold);
 }
 
-.announcements .articles {
+.announcements .articles,
+.trending .articles {
   margin-top: 20px;
-  padding: 20px 40px;
+  padding: 10px 30px;
 
-  font-size: 14px;
+  font-size: 13px;
 
   border-radius: 10px;
   background-color: #ffffff;
+
+  box-shadow: 5px 5px 10px 0 var(--shadow);
 }
 
 .announcements article {
@@ -297,8 +306,38 @@ main {
   text-overflow: ellipsis;
 
   margin-top: 10px;
+
+  color: var(--secondary-grey);
 }
 
-.trending {
-  background-color: aqua;
+.trending article {
+  display: flex;
+  align-items: center;
+
+  padding: 10px 0;
+}
+
+.trending article img {
+  margin-right: 15px;
+}
+
+.trending article img:hover {
+  cursor: pointer;
+}
+
+.trending article .user_tag {
+  font-weight: bold;
+}
+
+.trending article .user_description {
+  color: var(--secondary-grey);
+  margin-top: 5px;
+}
+
+.announcements article h4:hover,
+.trending article .user_tag:hover,
+.projects article h3:hover,
+.sidebar li p:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
